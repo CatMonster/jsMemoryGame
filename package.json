@@ -1,0 +1,16 @@
+{
+  "name": "memorygame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": { 
+    "build-css": "npx tailwindcss-cli@latest build ./src/styles.css -o ./dist/tailwind.css"
+  },
+  "author": "Aldo Cavenago",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.0.4",
+    "postcss": "^8.1.14",
+    "tailwindcss": "^2.0.1"
+  }
+}
