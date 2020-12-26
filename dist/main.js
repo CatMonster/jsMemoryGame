@@ -44,9 +44,13 @@ let ord = 1;
 const creaCards = (n) => {
   
   let card = `
-    <li data-ord='${ord}' data-num='${n}' class="card shadow rounded overflow-hidden text-center text-2xl text-white">
-      <div class="retro bg-green-300 p-8 text-green-400">?</div>
-      <div class="fronte bg-green-700 hidden p-8">${n}</div>
+    <li data-ord='${ord}' data-num='${n}' class="card h-36 shadow rounded overflow-hidden">
+      <div class="retro bg-green-300 p-4 text-green-400 h-full text-center">
+        ?
+      </div>
+      <div class="fronte bg-white hidden p-3 h-full">
+        <img src="img/fruits/${n}.png" class="h-full object-scale-down mx-auto">
+      </div>
     </li>
     `;
   board.innerHTML += card;
