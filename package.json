@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": { 
-    "build-css": "npx tailwindcss-cli@latest build ./src/styles.css -o ./dist/tailwind.css"
+    "build-css": "npx tailwindcss build ./src/styles.css -o ./dist/tailwind.css",
+    "build-css-prod": "NODE_ENV=production npx tailwindcss build ./src/styles.css -o ./dist/tailwind.css"
   },
   "author": "Aldo Cavenago",
   "license": "ISC",

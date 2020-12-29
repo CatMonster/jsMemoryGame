@@ -2,11 +2,13 @@
 const board = document.querySelector('.board');
 
 // in futuro saranno selezionabili dall'utente
-let righe = 4;
-let colonne = 4;
+let righe = 4;        // sarà selezionabile tra 4, 6 e 8
+let colonne = 4;      // sarà selezionabile tra 4, 6 e 8
 let livello = righe * colonne;
 // aggiungo la classe tailwind per incolonnare le carte
 board.classList.add(`grid-cols-${colonne}`);
+// dato che la creazione dinamica di classi non è supportata da purgeCSS aggiungo di seguito le eventuali classi statiche utili
+const forPurgeCss = `grid-cols-4 grid-cols-6 grid-cols-8`;
 
 // riempio l'array delle carte 
 let cards = [];
@@ -15,7 +17,7 @@ for (let index = 1; index <= livello/2; index++) {
   cards.push(index);
 }
 
-// function that randomly rearanges the items in an array  
+// funzione che riordina casualmente gli elementi di un array
 const shuffle = arr => {
   const result = [];
   for (let i = arr.length-1; i >= 0; i--) {
@@ -39,12 +41,12 @@ const shuffle = arr => {
 // mischio l'ordine nell'array
 let shuffled = shuffle(cards);
 
-// funzione che creo le carte e le appendo alla board
+// funzione che crea le carte e le appendo alla board
 let ord = 1;
 const creaCards = (n) => {
   
   let card = `
-    <li data-ord='${ord}' data-num='${n}' class="card h-36 shadow rounded overflow-hidden">
+    <li data-ord='${ord}' data-num='${n}' class="card h-36 md:h-36 shadow-md rounded overflow-hidden">
       <div class="retro bg-green-300 p-4 text-green-400 h-full text-center">
         ?
       </div>
@@ -77,7 +79,7 @@ function flipCard(e) {
   if (e.target.classList.contains('retro') && girateNum.length < 2) {
     // incremento il contatore carte girate
     numeroClick++;
-    numClick.innerHTML = `numero di carte girate: ${numeroClick}`;
+    numClick.innerHTML = `flips: ${numeroClick}`;
     
     let retro = e.target;
     // nascondo il retro della carta cliccata
@@ -140,3 +142,4 @@ let unflipCard = (girate) => {
   carta1.children[0].classList.remove('hidden');
   carta2.children[0].classList.remove('hidden');
 }
+

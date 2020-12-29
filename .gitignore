@@ -3121,3 +3121,7 @@ node_modules/xtend/mutable.js
 node_modules/xtend/package.json
 node_modules/xtend/README.md
 node_modules/xtend/test.js
+.DS_Store
+dist/.DS_Store
+dist/img/.DS_Store
+dist/img/fruits/.DS_Store
