@@ -80,6 +80,7 @@ function flipCard(e) {
     // incremento il contatore carte girate
     numeroClick++;
     numClick.innerHTML = `flips: ${numeroClick}`;
+    playFlip();
     
     let retro = e.target;
     // nascondo il retro della carta cliccata
@@ -135,6 +136,8 @@ let unflipCard = (girate) => {
   console.log(carta1.children[0], carta2.children[0]);
   console.log(carta1.children[1], carta2.children[1]);
 
+  playUnflip();
+  
   // nascondo il fronte delle due carte cliccate
   carta1.children[1].classList.add('hidden');
   carta2.children[1].classList.add('hidden');
@@ -143,3 +146,12 @@ let unflipCard = (girate) => {
   carta2.children[0].classList.remove('hidden');
 }
 
+let playFlip = () => {
+  let audio = document.getElementById('audioFlip');
+    audio.play();
+}
+
+let playUnflip = () => {
+  let audio = document.getElementById('audioUnflip');
+    audio.play();
+}
