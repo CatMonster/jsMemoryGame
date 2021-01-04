@@ -44,14 +44,12 @@ let shuffled = shuffle(cards);
 // funzione che crea le carte e le appendo alla board
 let ord = 1;
 const creaCards = (n) => {
-  
   let card = `
-    <li data-ord='${ord}' data-num='${n}' class="card h-36 md:h-36 shadow-md rounded overflow-hidden">
-      <div class="retro bg-green-300 p-4 text-green-400 h-full text-center">
-        ?
+    <li data-ord='${ord}' data-num='${n}' class="shadow-md rounded overflow-hidden max-h-40">
+      <div class="retro bg-green-300 p-2 h-36">
       </div>
-      <div class="fronte bg-white hidden p-3 h-full">
-        <img src="img/fruits/${n}.png" class="h-full object-scale-down mx-auto">
+      <div class="fronte bg-white hidden p-2 h-36">
+        <img src="img/fruits/${n}.png" class="h-32 mx-auto">
       </div>
     </li>
     `;
@@ -77,6 +75,7 @@ function flipCard(e) {
   
   // verifico che sia stato cliccato una card sul retro
   if (e.target.classList.contains('retro') && girateNum.length < 2) {
+
     // incremento il contatore carte girate
     numeroClick++;
     numClick.innerHTML = `flips: ${numeroClick}`;
@@ -85,7 +84,7 @@ function flipCard(e) {
     let retro = e.target;
     // nascondo il retro della carta cliccata
     retro.classList.add('hidden');
-    console.log(retro.parentElement.dataset.ord, retro.parentElement.dataset.num);
+    // console.log(retro.parentElement.dataset.ord, retro.parentElement.dataset.num);
     // e mostro il fronte
     let fronte = retro.parentElement.children[1];
     fronte.classList.remove('hidden');
@@ -101,20 +100,20 @@ function flipCard(e) {
 };
 
 let confronta = (girate) => {
-  console.log(`confronto le due carte girate: ${girateNum[0]} e ${girateNum[1]}`);
+  // console.log(`confronto le due carte girate: ${girateNum[0]} e ${girateNum[1]}`);
   if (girateNum[0] === girateNum[1]) {
-    console.log(girateNum);
-    console.log('YEAH!');
+    // console.log(girateNum);
+    // console.log('YEAH!');
     coppieTrovate++;
     if (coppieTrovate === (livello/2)) {
-      console.log('Grandissimo! le hai trovate tutte!');
+      // console.log('Grandissimo! le hai trovate tutte!');
       alert('Grandissimo!');
       setTimeout( function () {
         location = location;
         }, 3000);
     }
   } else {
-    console.log('non sono uguali');
+    // console.log('non sono uguali');
     setTimeout( function() {
       unflipCard(girate);
     }, 1000);
@@ -122,19 +121,19 @@ let confronta = (girate) => {
   setTimeout( () => {
     girateNum.length = 0;
     girateOrd.length = 0;
-    console.log('azzerati i due array');
+    // console.log('azzerati i due array');
   }, 1050);
   
 };
 
 let unflipCard = (girate) => {
   // seleziono le due carte
-  console.log(`carte da nasconder: ${girateOrd[0]} e ${girateOrd[1]}`);
+  // console.log(`carte da nasconder: ${girateOrd[0]} e ${girateOrd[1]}`);
   let carta1 = board.querySelector(`[data-ord="${girateOrd[0]}"]`);
   let carta2 = board.querySelector(`[data-ord="${girateOrd[1]}"]`);
 
-  console.log(carta1.children[0], carta2.children[0]);
-  console.log(carta1.children[1], carta2.children[1]);
+  // console.log(carta1.children[0], carta2.children[0]);
+  // console.log(carta1.children[1], carta2.children[1]);
 
   playUnflip();
   

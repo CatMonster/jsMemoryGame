@@ -7,12 +7,12 @@
   <title>memoryGame</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body class='bg-green-100 font-mono h-screen'>
-  <nav class="flex justify-between">
+<body class='bg-green-100 font-mono mx-auto'>
+  <nav class="flex justify-between min-w-full absolute top-0">
     <h1 class="bg-yellow-200 px-4">memoryGame</h1>
     <div class="numClick bg-yellow-200 px-4 text-right">flips: 0</div>
   </nav>
-  <ul class="board mt-6 center m-4 md:mx-12 lg:mx-16 grid gap-2 md:gap-4 lg:gap-8">
+  <ul class="board p-6 md:p-12 lg:px-16 grid gap-4">
   </ul>
   <audio id="audioFlip" src="./audio/card-flip.mp3"></audio>
   <audio id="audioUnflip" src="./audio/card-unflip.mp3"></audio>

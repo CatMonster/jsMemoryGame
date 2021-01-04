@@ -561,20 +561,12 @@ video {
   font-family: "Ubuntu Mono";
 }
 
+.h-32 {
+  height: 8rem;
+}
+
 .h-36 {
   height: 9rem;
-}
-
-.h-full {
-  height: 100%;
-}
-
-.h-screen {
-  height: 100vh;
-}
-
-.m-4 {
-  margin: 1rem;
 }
 
 .mx-auto {
@@ -582,30 +574,37 @@ video {
   margin-right: auto;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
+.max-h-40 {
+  max-height: 10rem;
 }
 
-.object-scale-down {
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
+.min-w-full {
+  min-width: 100%;
 }
 
 .overflow-hidden {
   overflow: hidden;
 }
 
-.p-3 {
-  padding: 0.75rem;
+.p-2 {
+  padding: 0.5rem;
 }
 
-.p-4 {
-  padding: 1rem;
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.top-0 {
+  top: 0px;
 }
 
 * {
@@ -626,21 +625,12 @@ video {
   --tw-ring-shadow: 0 0 #0000;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .text-right {
   text-align: right;
 }
 
-.text-green-400 {
-  --tw-text-opacity: 1;
-  color: rgba(52, 211, 153, var(--tw-text-opacity));
-}
-
-.gap-2 {
-  gap: 0.5rem;
+.gap-4 {
+  gap: 1rem;
 }
 
 .grid-cols-4 {
@@ -739,28 +729,15 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:h-36 {
-    height: 9rem;
-  }
-
-  .md\:mx-12 {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-
-  .md\:gap-4 {
-    gap: 1rem;
+  .md\:p-12 {
+    padding: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:mx-16 {
-    margin-left: 4rem;
-    margin-right: 4rem;
-  }
-
-  .lg\:gap-8 {
-    gap: 2rem;
+  .lg\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
