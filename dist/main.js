@@ -49,7 +49,7 @@ const creaCards = (n) => {
       <div class="retro bg-green-300 p-2 h-36">
       </div>
       <div class="fronte bg-white hidden p-2 h-36">
-        <img src="img/fruits/${n}.png" class="h-32 mx-auto">
+        <div style="background: url('img/fruits/${n}.png')" class="h-32 mx-auto bg-center bg-white bg-contain bg-no-repeat" />
       </div>
     </li>
     `;
