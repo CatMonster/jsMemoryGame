@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "scripts": { 
+  "scripts": {
     "build-css": "npx tailwindcss build ./src/styles.css -o ./dist/tailwind.css",
     "build-css-prod": "NODE_ENV=production npx tailwindcss build ./src/styles.css -o ./dist/tailwind.css"
   },
   "author": "Aldo Cavenago",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^10.0.4",
-    "postcss": "^8.1.14",
-    "tailwindcss": "^2.0.1"
-  }
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.2",
+    "tailwindcss": "^2.0.2"
+  },
+  "repository": "https://github.com/Aldo-cav/jsMemoryGame"
 }
